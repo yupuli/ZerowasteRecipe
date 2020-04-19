@@ -1,8 +1,59 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Recipe";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Recipe</h2>
+<h2 class="query">@ViewBag.Title</h2>
+<h3>
+    @ViewBag.Message
+</h3>
+<!DOCTYPE html>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<style>
+        .query{
+            position:center;
+            width:300px;
+            margin:0 auto;
+        }
+        .input{
+            border: 4px solid #2b56d6;
+            border-radius: 5px;
+            background: transparent;
+            top: 0;
+            right: 0;
+            height:35px;
 
+        }
+        .button{
+            background: #2b56d6;
+            color: #ffffff;
+            border-radius: 0 5px 5px 0;
+            width: 60px;
+            top: 0;
+            right: 0;
+            height:35px;
+        }
+ </style>
+
+<div class="query">
+    <input id="search" class="input">
+    <button class="button"  onclick="getrecipe(document.getElementById('search').value)">Search</button>
+</div>
+<div id="output"></div>
+<div id="context"></div>
+<div id="ingredient"></div>
+<div id="calories"></div>
+<div id="totalTime"></div>
+<script>
+    function getrecipe(q) {
+        $.ajax({
+            url: "https://api.edamam.com/search?q=" + q + "&app_id=30b0eafd&app_key=b2cf3c073d24eafc3b79553dd0e23747",
+            success: function (res) {
+                document.getElementById("output").innerHTML = "<h1>" + res.hits[0].recipe.label + "</h1><br>"
+                document.getElementById("context").innerHTML = "<h2> Labels:" + res.hits[0].recipe.healthLabels + "</h2><br>"
+                document.getElementById("ingredient").innerHTML = "<h2> IngredientLines:" + res.hits[0].recipe.ingredientLines + "</h2><br>"
+                document.getElementById("calories").innerHTML = "<h2> Calories:" + res.hits[0].recipe.caories + " caories </h2><tr>"
+                document.getElementById("totalTime").innerHTML = "<h2> Cook Time:" + res.hits[0].recipe.totalTime + " minutes </h2><br>"
+            }
+        });
+    }
+</script>

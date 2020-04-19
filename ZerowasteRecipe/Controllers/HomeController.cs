@@ -22,8 +22,18 @@ namespace ZerowasteRecipe.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+           
 
+            return View();
+        }
+        public ActionResult Locations()
+        {
+            ViewBag.Message = "Your can zoom in or out to find collection points";
+            return View();
+        }
+        public ActionResult Recipe()
+        {
+            ViewBag.Message = "Food Reicpe Search page.";
             return View();
         }
     }
