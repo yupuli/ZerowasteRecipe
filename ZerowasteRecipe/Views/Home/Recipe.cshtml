@@ -36,24 +36,60 @@
 
 <div class="query">
     <input id="search" class="input">
-    <button class="button"  onclick="getrecipe(document.getElementById('search').value)">Search</button>
+    <button class="button" id="btn1" onclick="getrecipe(document.getElementById('search').value)">Search</button>
+    <!---->
+    <button class="button" onclick="getStep()">Steps</button>
 </div>
 <div id="output"></div>
-<div id="context"></div>
+<div id="servings"></div>
 <div id="ingredient"></div>
-<div id="calories"></div>
 <div id="totalTime"></div>
+<div id="imgs"></div>
+<div id="Steps"></div>
 <script>
+    var rid = 0;
     function getrecipe(q) {
         $.ajax({
-            url: "https://api.edamam.com/search?q=" + q + "&app_id=30b0eafd&app_key=b2cf3c073d24eafc3b79553dd0e23747",
+           url: "https://api.spoonacular.com/recipes/search?query=" + q + "&apiKey=a16063f4fe2b4f5b952d4a348d15892e",
+            //url: "https://api.edamam.com/search?q=" + q + "&app_id=30b0eafd&app_key=b2cf3c073d24eafc3b79553dd0e23747",
             success: function (res) {
-                document.getElementById("output").innerHTML = "<h1>" + res.hits[0].recipe.label + "</h1><br>"
-                document.getElementById("context").innerHTML = "<h2> Labels:" + res.hits[0].recipe.healthLabels + "</h2><br>"
-                document.getElementById("ingredient").innerHTML = "<h2> IngredientLines:" + res.hits[0].recipe.ingredientLines + "</h2><br>"
-                document.getElementById("calories").innerHTML = "<h2> Calories:" + res.hits[0].recipe.caories + " caories </h2><tr>"
-                document.getElementById("totalTime").innerHTML = "<h2> Cook Time:" + res.hits[0].recipe.totalTime + " minutes </h2><br>"
+                document.getElementById("output").innerHTML = "<h1>" + res.results[0].title + "</h1><br>"
+                rid = res.results[0].id
+                //document.getElementById("servings").innerHTML = "<h1> Servings: " + res.results[0].servings + "</h1><br>"
+                //document.getElementById("totalTime").innerHTML = "<h2> Cook Time: " + res.results[0].readyInMinutes + " minutes </h2><br>"
+                //document.getElementById("imgs").innerHTML = "<img src='" + res.baseUri + res.results[0].image + "' width='400' /><br>"
+
+
+               var i = 0;
+                var a="";
+                for (i; i < 10; i++) {
+                     a= a+"<div> <h1>" + res.results[i].title + "</h1><br>"+ "<h1> Servings: " + res.results[i].servings + "</h1><br>"+"<h2> Cook Time: " + res.results[i].readyInMinutes + " minutes </h2><br>"+"<img src='" + res.baseUri + res.results[i].image + "' width='400' /><br> </div>"
+                }
+                document.getElementById("Steps").innerHTML = a;
+
+
+                //document.getElementById("output").innerHTML = "<h1>" + res.hits[0].recipe.label + "</h1><br>"
+                //document.getElementById("context").innerHTML = "<h2> Labels:" + res.hits[0].recipe.healthLabels + "</h2><br>"
+                //document.getElementById("imgs").innerHTML = "<h2><img src='" + res.hits[0].recipe.image + "'/>  </h2><br>"
+                //document.getElementById("ingredient").innerHTML = "<h2> IngredientLines:" + res.hits[0].recipe.ingredientLines + "</h2><br>"
+                //document.getElementById("calories").innerHTML = "<h2> Calories:" + res.hits[0].recipe.caories + " caories </h2><tr>"
+                //document.getElementById("totalTime").innerHTML = "<h2> Cook Time:" + res.hits[0].recipe.totalTime + " minutes </h2><br>"
+
             }
+        });
+    }       
+    function getStep() {
+        
+        $.ajax({
+            url: "https://api.spoonacular.com/recipes/" + rid + "/analyzedInstructions?apiKey=a16063f4fe2b4f5b952d4a348d15892e",
+            success: function (results) {
+                var cookSteps = ""
+                results.forEach(function (e) {
+                    cookSteps = cookSteps + "<h2>" + e.steps[0].step + "</h2><br>"
+                });
+                
+                document.getElementById("Steps").innerHTML = cookSteps;
+           }
         });
     }
 </script>

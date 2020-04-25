@@ -150,7 +150,7 @@
         function centerMap(coordinates) {
             map.getView().setCenter(ol.proj.transform([coordinates[0], coordinates[1]], 'EPSG:4326', 'EPSG:3857'));
             map.getView().setZoom(15);
-        }
+       }
 
         var hotels = [[145.044, -37.877, 'firstHotel'], [145.038, -37.873, 'SecondHotel']];
 
