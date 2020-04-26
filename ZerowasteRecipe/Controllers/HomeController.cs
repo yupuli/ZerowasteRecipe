@@ -36,5 +36,10 @@ namespace ZerowasteRecipe.Controllers
             ViewBag.Message = "Food Reicpe Search page.";
             return View();
         }
+        public ActionResult Showrecipe()
+        {
+
+            return View();
+        }
     }
 }
