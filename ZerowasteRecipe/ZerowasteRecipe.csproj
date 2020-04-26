@@ -149,9 +149,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\recipebg.jpg" />
+    <Content Include="images\main1.jpg" />
+    <Content Include="images\searchbg.jpg" />
+    <Content Include="images\main4.png" />
+    <Content Include="images\main3.jpg" />
+    <Content Include="images\main2.jpg" />
     <Content Include="resources\rest_codes.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\powerhousea01zerowaste - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.5.0.intellisense.js" />
     <Content Include="Scripts\JavaScript.js" />
     <Content Include="Scripts\JavaScript1.js" />
@@ -169,6 +176,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <None Include="Views\Home\Locations.cshtml" />
+    <Content Include="Scripts\Slides.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -185,6 +193,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Recipe.cshtml" />
     <Content Include="Views\Home\Showrecipe.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

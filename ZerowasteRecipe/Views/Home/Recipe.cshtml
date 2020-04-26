@@ -1,76 +1,93 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Recipe";
 }
-
-<h2 class="query">@ViewBag.Title</h2>
-<h3>
-    @ViewBag.Message
-</h3>
 <!DOCTYPE html>
-<script src="~/Scripts/jquery-3.3.1.js"></script>
-<script src="~/Scripts/jquery-3.5.0.min.js"></script>
-<script src="~/Scripts/JavaScript.js"></script>
-<script src="~/Scripts/JavaScript1.js"></script>
-<script src="~/Scripts/JavaScript2.js"></script>
-<style>
-    .query{
-        position: center;
-        width: 300px;
-        margin: 0 auto;
-    }
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery-3.5.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background: url("https://mockingbot.com/uploads2/images/69/694317/v2_q91ngj.jpg");
+            /* Full height */
+            height: 100%;
+            width: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-    .input {
-        border: 4px solid #2b56d6;
-        border-radius: 5px;
-        background: transparent;
-        top: 0;
-        right: 0;
-        height: 35px;
-    }
-    .button {
-        background: #2b56d6;
-        color: #ffffff;
-        border-radius: 0 5px 5px 0;
-        width: 60px;
-        top: 0;
-        right: 0;
-        height: 35px;
-    }
-    .imgs{
-        border: 4px solid #2b56d6;
-    }
-</style>
+        .query {
+            float: right;
+            width: 300px;
+            margin: 0 auto;
+        }
 
-<div class="query">
-    <input id="search" class="input">
-    <button class="button" id="btn1" onclick="getrecipe(document.getElementById('search').value)">Search</button>
+        .output {
+            float: right;
+ 
+        }
 
-</div>
-<div id="output">
-    <h1>Click on images to show more details</h1>
-</div>
+        .input {
+            border: 4px solid #2b56d6;
+            border-radius: 5px;
+            background: transparent;
+            top: 0;
+            right: 0;
+            height: 35px;
+        }
 
+        .button {
+            background: #2b56d6;
+            color: #ffffff;
+            border-radius: 0 5px 5px 0;
+            width: 60px;
+            top: 0;
+            right: 0;
+            height: 35px;
+        }
 
-<div id="Steps"></div>
+        .imgs {
+            border: 4px solid #2b56d6;
+        }
+    </style>
+    <div class="query">
+        <h1>Enter ingredients for searching</h1>
+        <input id="search" class="input">
+        <button class="button" id="btn1" onclick="getrecipe(document.getElementById('search').value)">Search</button>
+        <input class="button" type="reset" value="Reset">
+        <div id="output" class="output">
+        <h1>Click on images to show more details</h1>
+    </div>
+    </div>
+   
+</head>
+<body>
+    
+</body>
+</html>
 <script>
     var rid = 0;
     function getrecipe(q) {
         $.ajax({
             url: "https://api.spoonacular.com/recipes/search?query=" + q + "&apiKey=a16063f4fe2b4f5b952d4a348d15892e",
-
             success: function (res) {
-               
-               
+
+
                 var i = 0;
                 var a = "";
                 for (i; i < 10; i++) {
                     rid = res.results[i].id
-                    a = a + "<div class='imgs'> <h1>" + res.results[i].title + "</h1><br><a href='Showrecipe?value=" + rid+"'/><img src='" + res.baseUri + res.results[i].image + "' width='400' /><br> </div>"
-                    
+                    a = a + "<div class='imgs'> <h1>" + res.results[i].title + "</h1><br><a href='Showrecipe?value=" + rid + "'/><img src='" + res.baseUri + res.results[i].image + "' width='400' /><br> </div>"
+
                 }
                 document.getElementById("output").innerHTML = a;
-                
+
             }
         });
     }
 </script>
+

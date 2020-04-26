@@ -2,28 +2,55 @@
     ViewBag.Title = "Home Page";
 }
 
-    <div class="jumbotron">
-        <h1>Towards Zero Wate</h1>
-        <p class="lead">Love the Earth.</p>
-        <!--<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>-->
-    </div>
+<!DOCTYPE html>
+<html>
+<head>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Map</h2>
-        <p>
-            The map is for those who what to now the collection point
-        </p>
-        <p><a class="btn btn-default" href="https://www.google.com/search?q=collect+point+vic&npsic=0&rflfq=1&rlha=0&rllag=-37934222,145009012,17036&tbm=lcl&ved=2ahUKEwimmZbe2uToAhXczDgGHb76DYMQtgN6BAgLEAQ&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:2&rldoc=1#rlfi=hd:;si:;mv:[[-37.297501627583344,146.6585543550781],[-38.61843813613188,143.5933688082031],null,[-37.96093974979145,145.1259615816406],9]">Learn more &raquo;</a></p>
+    <script type="text/javascript" src="~/Scripts/jquery-3.5.0.min.js"></script>
+    <style>
+        .scale img {
+            margin: 0;
+            /* Full height */
+            height: auto;
+            width: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain|cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="scale" width="100%">
+        <img src="~/images/main1.jpg" />
     </div>
-    <div class="col-md-4">
-        <h2>Love the Earth</h2>
-        <p>Let's start to love our earth.</p>
-        <p><a class="btn btn-default" href="https://www.youtube.com/watch?v=pvuN_WvF1to">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Advertistment</h2>
-        <p>Ads.</p>
-        <p><a class="btn btn-default" href="https://www.goingzerowaste.com/">Learn more &raquo;</a></p>
-    </div>
-</div>
+</body>
+</html>
+<script>
+    function passWord() {
+        var testV = 1;
+        var pass1 = prompt('Please Enter Your Password','');
+        while (testV < 3) {
+            if (!pass1)
+                history.go(-1);
+            if (pass1.toLowerCase() == "powerhouse") {
+                alert('You Got it Right!');
+                window.open('https://localhost:44309/Home/Index');
+                break;
+            }
+            testV+=1;
+            var pass1 = prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
+        }
+        if (pass1.toLowerCase()!="password" & testV ==3)
+            history.go(-1);
+            return " ";
+    }
+    window.onload = function () {
+        passWord();
+    }      
+</script>
+<CENTER>
+    <FORM>
+        <input type="button" value="Enter Protected Area" onClick="passWord()">
+    </FORM>
+</CENTER>

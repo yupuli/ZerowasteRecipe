@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Showrecipe";
+
+}
+
+<h2>Showrecipe</h2>
+<!DOCTYPE html>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+<div class="steps">
+    <div id="output"></div>
+    <div id="ingredient"></div>
+    <div id="imgs"></div>
+    <div id="servings"></div>
+    <div id="totalTime"></div>
+    <div id="steps"></div>
+    <div id="summary"></div>
+</div>
+<!-- -->
+<script type="text/javascript">
+   var rid ;
+    function oneValue() {
+        var url = window.location.search;
+        if (url.indexOf("?") != -1) {
+            rid = url.substr(url.indexOf("=") + 1);
+        }
+    }
+    function getIngredient() {
+        $.ajax({
+            url: "https://api.spoonacular.com/recipes/"+rid+"/information?includeNutrition=false&apiKey=a16063f4fe2b4f5b952d4a348d15892e",          
+            success: function (res) {
+                document.getElementById("ingredient").innerHTML = "<h1>Ingredients:" + res.title + "</h1><br>";
+                document.getElementById("imgs").innerHTML = "</h1><br><img src='" + res.image + "' width='400' />"
+                document.getElementById("servings").innerHTML = "<h1> Servings: " + res.servings + "</h1><br>"
+                document.getElementById("totalTime").innerHTML = "<h2> Cook Time: " + res.readyInMinutes + " minutes </h2><br>"
+                document.getElementById("summary").innerHTML = "<h1> Summary: " + res.summary + "</h1><br>"
+           }
+        });
+    }
+    function getStep() {       
+        $.ajax({
+            url: "https://api.spoonacular.com/recipes/" + rid + "/analyzedInstructions?apiKey=a16063f4fe2b4f5b952d4a348d15892e",
+            success: function (results) {
+                var cookSteps = "<h1>Cooking steps: </br><br>"
+                
+                results.forEach(function (e) {
+                    var i=0
+                    e.steps.forEach(function (s) {
+                        cookSteps = cookSteps + "<h2>Step " + i + ":" + s.step + "</h2><br>"
+                        i++
+                    });                  
+                });              
+                document.getElementById("steps").innerHTML = cookSteps;
+           }
+        });
+    }
+    window.onload = function () {
+        oneValue();
+        getIngredient();
+        getStep();
+    }      
+</script>
