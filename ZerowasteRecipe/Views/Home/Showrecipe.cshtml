@@ -101,7 +101,7 @@
                 document.getElementById("imgs").innerHTML = "<img src='" + res.image + "' width='100%' /><br>"
                 document.getElementById("servings").innerHTML = "<p> Servings: " + res.servings + "</p>><br>"
                 document.getElementById("totalTime").innerHTML = "<p> Cook Time: " + res.readyInMinutes + " minutes </p>><br>"
-                //document.getElementById("summary").innerHTML = "<p> Summary: " + res.summary + "</p>><br>"
+           
                 document.getElementById("title").innerHTML = "<p>Recipe:" + res.title + "</p><br>";
            }
         });
@@ -141,7 +141,7 @@
     window.onload = function () {
         oneValue();
         getInformation();
-        //getIngredient();
+        
         getStep();
     }      
 </script>

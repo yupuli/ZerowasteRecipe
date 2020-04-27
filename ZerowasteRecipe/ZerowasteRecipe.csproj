@@ -158,6 +158,7 @@
     <Content Include="resources\rest_codes.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\powerhousea01zerowaste - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.5.0.intellisense.js" />
     <Content Include="Scripts\JavaScript.js" />
