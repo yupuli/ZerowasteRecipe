@@ -21,23 +21,33 @@
         }
 
         .query {
-            float: right;
-            width: 300px;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+            width: 600px;
             margin: 0 auto;
         }
 
         .output {
-            float: right;
- 
+           width:100%;
+           height:100%;
+           float:left;
+           border-radius: 30px;
+           background-color: white;
+           padding: 10px;
+           border: thin;
+           margin: 0;
         }
 
         .input {
             border: 4px solid #2b56d6;
             border-radius: 5px;
-            background: transparent;
+            
             top: 0;
             right: 0;
             height: 35px;
+            background:white;
         }
 
         .button {
@@ -50,20 +60,27 @@
             height: 35px;
         }
 
-        .imgs {
-            border: 4px solid #2b56d6;
-        }
+
     </style>
     <div class="query">
+
         <h1>Enter ingredients for searching</h1>
+        <div>
+            <label for="recipe"><h3>Enter the number of Recipe result(between 1 and 5)</h3></label>
+            <input class="input" type="number" id="quantity" name="quantity" min="1" max="5">
+        </div>
+        <br>
+        <h3>Enter the ingredients separated by Comma:</h3>
         <input id="search" class="input">
         <button class="button" id="btn1" onclick="getrecipe(document.getElementById('search').value)">Search</button>
-        <input class="button" type="reset" value="Reset">
-        <div id="output" class="output">
+
         <h1>Click on images to show more details</h1>
+        <div id="output" class="output">
+
+        </div>
+
     </div>
-    </div>
-   
+    
 </head>
 <body>
     
@@ -76,11 +93,11 @@
             url: "https://api.spoonacular.com/recipes/search?query=" + q + "&apiKey=a16063f4fe2b4f5b952d4a348d15892e",
             success: function (res) {
 
-                var i = 0;
+                var j = document.getElementById("quantity").value;
                 var a = "";
-                for (i; i < 10; i++) {
+                for (i = 0; i < j; i++) {
                     rid = res.results[i].id
-                    a = a + "<div class='imgs'> <h1>" + res.results[i].title + "</h1><br><a href='Showrecipe?value=" + rid + "'/><img src='" + res.baseUri + res.results[i].image + "' width='400' /><br> </div>"
+                    a = a + "<div class='imgs'> <p>" + res.results[i].title + "</p><br><a href='Showrecipe?value=" + rid + "'/><img src='" + res.baseUri + res.results[i].image + "' width='400' /><br><br> </div>"
 
                 }
                 document.getElementById("output").innerHTML = a;

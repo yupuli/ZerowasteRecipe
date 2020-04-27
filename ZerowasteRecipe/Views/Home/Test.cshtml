@@ -1,17 +1,18 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Recipe Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body, html {
+         html {
             height: 100%;
             margin: 0;
         }
 
-        .bg {
+        body {
+            width:70%;
+            margin: 0;
             /* The image used */
-            background-image: url("https://mockingbot.com/uploads2/images/69/694317/v2_q91ngj.jpg");
+            background-image: url("https://mockingbot.com/uploads2/images/69/695464/v2_q96ms6.png");
             /* Full height */
             height: 100%;
             /* Center and scale the image nicely */
@@ -20,52 +21,163 @@
             background-size: cover;
         }
 
+        .box {
+            float:left;
+            border-radius: 30px;
+            width: 40%;
+            height: auto;
+            padding: 10px;
+            border: thin;
+            margin: 0;
+            background-color: white;
+        }
+
+        .box1 {
+            float:right;
+            border-radius: 30px;
+            height:auto;
+			width: 60%;
+            
+            padding: 10px;
+            border: thin;
+            margin: 0;
+            background-color: white;
+        }
+
+        .box2 {
+            border-radius: 30px;
+            width: 100%;
+            height: auto;
+            float:left;
+            padding: 10px;
+            border: thin;
+            margin: 0;
+            background-color: white;
+        }
+
         .container {
             position: relative;
             text-align: center;
-            color: white;
+            color: black;
         }
 
-        .top-right {
+        .top {
             position: absolute;
             top: 35px;
-            right: 50px;
+            width:100%;
+            height:auto;
         }
+
+      
 
         .centered {
             position: absolute;
-            top: 25%;
-            left: 70%;
+            top: 20%;
+            left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        table, th, td {
+            border: thick;
+        }
     </style>
+    </head>
+    <div class="top">
+        <h1 style="color: white" id="title"></h1>
+        <br><br><br>
 
-    <div class="centered">
-        <form>
-            <h1>Enter the desired ingredients that you may have in your refridgerator/pantry</h1>
-            <div>
-                <label for="recipe"><h3>Enter the number of ingredients(between 1 and 5)</h3></label>
-                <input type="number" id="quantity" name="quantity" min="1" max="5">
-            </div>
-            <br>
-            <br>
-            <div>
-                <label for="recipe1"><h3>Enter the ingredients separated by Comma</h3></label>
-                <input id="recipe1" , type="text">
-            </div>
-            <br> <br> <br>
+        <div id="imgs"></div>
+        <br><br><br><br>
+                    <div class="box" >
 
-            <input type="submit" value="Submit" style="height:50px; width:100px">
-            &nbsp;&nbsp;
-            <input type="reset" value="Reset" style="height:50px; width:100px">
+                        <p><h2> Nutritional Information</h2></p>
+                        <p id="carbohydrate">Carbohydrates:</p>
+                        <p id="protien">Protiens:</p>
+                        <p id="fat">Fats:</p>
+                       
+                    </div>
+        <br><br><br><br>
+
+                    <div class="box1" >
+                        <p id="servings">Servings:</p>
+                        <p id="totalTime">Cooking Time:</p>
+                        <p>Ingredients Needed:</p>
+                        <div id="ingredient">
+                        </div>
+
+                    </div>
+        
+        
+                    <div class="box2">
+
+                        <p><h2> Method Of Cooking:</h2></p>
+                        <div id="steps"></div>
 
 
-        </form>
-
+                    </div>
     </div>
-</head>
-<body>
-    <div class="bg"></div>
-</body>
+    
+    <body>
+        
+    </body>
 </html>
+<script type="text/javascript">
+   var rid ;
+    function oneValue() {
+        var url = window.location.search;
+        if (url.indexOf("?") != -1) {
+            rid = url.substr(url.indexOf("=") + 1);
+        }
+    }
+    function getInformation() {
+        $.ajax({
+            url: "https://api.spoonacular.com/recipes/"+rid+"/information?includeNutrition=false&apiKey=a16063f4fe2b4f5b952d4a348d15892e",
+            success: function (res) {
+                document.getElementById("ingredient").innerHTML = "<p>Ingredients:" + res.title + "</p><br>";
+                document.getElementById("imgs").innerHTML = "<img src='" + res.image + "' width='100%' /><br>"
+                document.getElementById("servings").innerHTML = "<p> Servings: " + res.servings + "</p>><br>"
+                document.getElementById("totalTime").innerHTML = "<p> Cook Time: " + res.readyInMinutes + " minutes </p>><br>"
 
+                document.getElementById("title").innerHTML = "<p>Recipe:" + res.title + "</p><br>";
+           }
+        });
+    }
+    function getIngredient() {
+        $.ajax({
+            url: "https://api.spoonacular.com/recipes/" + rid + "/ingredientWidget.json&apiKey=a16063f4fe2b4f5b952d4a348d15892e",
+            success: function (res) {
+                var ing = "11"
+                res.forEach(function (e) {
+                    e.ingredient.forEach(function (f) {
+                        //ing= ing+f.name+", "
+                    })
+
+                })
+                document.getElementById("ingredient").innerHTML = "<p>Ingredients:" + ing + "</p><br>";
+           }
+        });
+    }
+    function getStep() {
+        $.ajax({
+            url: "https://api.spoonacular.com/recipes/" + rid + "/analyzedInstructions?apiKey=a16063f4fe2b4f5b952d4a348d15892e",
+            success: function (results) {
+                var cookSteps = "<h1>Cooking steps: </br><br>"
+
+                results.forEach(function (e) {
+                    var i=0
+                    e.steps.forEach(function (s) {
+                        cookSteps = cookSteps + "<h2>Step " + i + ":" + s.step + "</h2><br>"
+                        i++
+                    });
+                });
+                document.getElementById("steps").innerHTML = cookSteps;
+           }
+        });
+    }
+    window.onload = function () {
+        oneValue();
+        getInformation();
+
+        getStep();
+    }
+</script>

@@ -80,3 +80,14 @@ D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\obj\R
 D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\obj\Release\ZerowasteRecipe.csproj.CopyComplete
 D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\obj\Release\ZerowasteRecipe.dll
 D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\obj\Release\ZerowasteRecipe.pdb
+D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\bin\Microsoft.Azure.KeyVault.Core.dll
+D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
+D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\bin\Microsoft.WindowsAzure.Configuration.dll
+D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\bin\Microsoft.WindowsAzure.Storage.dll
+D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\bin\Microsoft.Azure.KeyVault.Core.xml
+D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml
+D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\bin\Microsoft.WindowsAzure.Configuration.xml
+D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\bin\Microsoft.WindowsAzure.Storage.pdb
+D:\Monash university\programs\5120\Project\ZerowasteRecipe\ZerowasteRecipe\bin\Microsoft.WindowsAzure.Storage.xml
