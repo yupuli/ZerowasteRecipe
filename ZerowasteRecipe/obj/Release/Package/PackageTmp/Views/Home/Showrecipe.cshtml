@@ -12,7 +12,7 @@
     <style>
         html {
             height: 100%;
-            width:auto;
+            width: auto;
             margin: 0;
         }
 
@@ -29,7 +29,8 @@
         }
 
         .box {
-            float: left;
+            text-align: left;
+            font-size: medium;
             border-radius: 30px;
             width: 40%;
             height: auto;
@@ -40,7 +41,8 @@
         }
 
         .box1 {
-            
+            text-align: left;
+            font-size: medium;
             border-radius: 30px;
             height: auto;
             width: 60%;
@@ -52,6 +54,7 @@
 
         .box2 {
             border-radius: 30px;
+            font-size: medium;
             width: 100%;
             height: auto;
             float: left;
@@ -59,10 +62,10 @@
             border: thin;
             margin: 0;
             color: white;
-            
         }
-        .step{
-            text-align:left;
+
+        .step {
+            text-align: left;
         }
 
         .container {
@@ -73,7 +76,6 @@
 
         .top {
             position: absolute;
-            top: 35px;
             width: 100%;
             height: auto;
         }
@@ -98,34 +100,32 @@
 
         <div id="imgs"></div>
         <br><br><br><br>
-                    <div class="box">
-                        <p id="servings">Servings:</p>
-                        <p id="totalTime">Cooking Time:</p>
-                        <p>Ingredients Needed:</p>
-                        <div id="ingredient"></div>
-                       
-
-                    </div>
-        <br><br><br><br>
-
-                    <div class="box1">
-
-                        <p><h2> Nutritional Summary</h2></p>
-                        <!--<p id="carbohydrate">Carbohydrates:</p>
-                            <p id="protien">Protiens:</p>
-                            <p id="fat">Fats:</p>-->
-                        <p id="summary"></p>
-                    </div>
+        <div class="box">
+            <h2>Servings:</h2>
+            <p id="servings"></p>
+            <h2>Cooking Time:</h2>
+            <p id="totalTime">Cooking Time:</p>
+            <h2>Ingredient:</h2>
+            <div id="ingredient"></div>
+        </div>
+        <div class="box1">
+            <h2><P>Nutrition Summary:</P></h2>
+            <!--<p id="carbohydrate">Carbohydrates:</p>
+                <p id="protien">Protiens:</p>
+                <p id="fat">Fats:</p>-->
+            <p id="summary"></p>
+        </div>
 
 
         <div class="box2">
 
-            <p><h2> Method Of Cooking:</h2></p>
+
             <div id="steps" class="step"></div>
 
 
         </div>
     </div>
+    
 
 </head>
 <body>
@@ -146,13 +146,10 @@
         $.ajax({
             url: "https://api.spoonacular.com/recipes/" + rid + "/information?includeNutrition=false&apiKey=a16063f4fe2b4f5b952d4a348d15892e",
             success: function (res) {
-                document.getElementById("ingredient").innerHTML = "<p>Ingredients:" + res.title + "</p><br>";
+                document.getElementById("ingredient").innerHTML = "<p>" + res.title + "</p><br>";
                 document.getElementById("imgs").innerHTML = "<img src='" + res.image + "' width='600px' height='450px' /><br>"
-                document.getElementById("servings").innerHTML = "<p> Servings: " + res.servings + "</p>"
-                document.getElementById("totalTime").innerHTML = "<p> Cook Time: " + res.readyInMinutes + " minutes </p>"
-                //document.getElementById("carbohydrate").innerHTML = "<p>" + res.title + "</p>";
-               // document.getElementById("protien").innerHTML = "<p>" + res.title + "</p>";
-                // document.getElementById("fat").innerHTML = "<p>" + res.title + "</p>";
+                document.getElementById("servings").innerHTML = "<p>" + res.servings + "</p>"
+                document.getElementById("totalTime").innerHTML = "<p> " + res.readyInMinutes + " minutes </p>"               
                 document.getElementById("summary").innerHTML = res.summary;
                 document.getElementById("title").innerHTML = "<p>Recipe:" + res.title + "</p><br>";
             }
@@ -180,7 +177,7 @@
                 var cookSteps = "<h1>Cooking steps: </h1><br>"
 
                 results.forEach(function (e) {
-                    var i = 0
+                    var i = 1
                     e.steps.forEach(function (s) {
                         cookSteps = cookSteps + "<p>Step " + i + ":" + s.step + "</p>"
                         i++

@@ -192,7 +192,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <None Include="Views\Home\Locations.cshtml" />
+    <Content Include="Views\Home\Locations.cshtml" />
     <Content Include="Scripts\Slides.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -208,7 +208,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Home\Recipe.cshtml" />
+    <Content Include="Views\Home\Recipe.cshtml" />
     <Content Include="Views\Home\Showrecipe.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
   </ItemGroup>
