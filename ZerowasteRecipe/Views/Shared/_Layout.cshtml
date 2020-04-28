@@ -30,15 +30,15 @@
             </div>
         </div>
     </div>
-   
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - A1-Powerhouse</p>
-            </footer>
-        </div>
-    
+
+        
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer style="bottom:0">
+            <!--<p>&copy; @DateTime.Now.Year - A1-Powerhouse</p>-->
+        </footer>
+    </div>
 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

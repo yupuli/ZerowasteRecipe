@@ -3,145 +3,197 @@
     ViewBag.Title = "Showrecipe";
 
 }
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery-3.5.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        html {
+            height: 100%;
+            width:auto;
+            margin: 0;
+        }
+
         body {
-            margin:auto;
-            background-image: url('../../images/recipebg.jpg');
-           height: 100%;
+            margin: 0;
+            /* Full height */
+            height: 100%;
             width: 100%;
             /* Center and scale the image nicely */
             background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            background-repeat: repeat;
+            background-size: 100% 100%;
+            background-image: url("https://mockingbot.com/uploads2/images/69/695464/v2_q96ms6.png");
         }
-        .box{
-            float:left;
-			border-radius: 30px;
-            height:auto;
-			width: 20%;
-            padding: 10px;
-            border: thin;
-            margin: 0;
-			background-color: white;
-		}
-        .box1 {
-            float:left;
+
+        .box {
+            float: left;
             border-radius: 30px;
-            width: 30%;
+            width: 40%;
             height: auto;
-            top: 35px;
             padding: 10px;
             border: thin;
             margin: 0;
-            background-color: white;
+            color: white;
+        }
+
+        .box1 {
+            
+            border-radius: 30px;
+            height: auto;
+            width: 60%;
+            padding: 10px;
+            border: thin;
+            margin: 0;
+            color: white;
         }
 
         .box2 {
-            float:right;
-            font-size:small;
             border-radius: 30px;
-            width: 50%;
+            width: 100%;
             height: auto;
-            top: 35px;
+            float: left;
             padding: 10px;
             border: thin;
             margin: 0;
-            background-color: white;
+            color: white;
+            
         }
-        .steps{
-            height:auto
+        .step{
+            text-align:left;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            color: black;
+        }
+
+        .top {
+            position: absolute;
+            top: 35px;
+            width: 100%;
+            height: auto;
+        }
+
+
+
+        .centered {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table, th, td {
+            border: thick;
         }
     </style>
 
-    <div class="steps">
+    <div class="top">
+        <h1 style="color: white" id="title"></h1>
+        <br>
 
-        <div class="box" >
-            <div id="title"></div>
-            <div id="imgs"></div>
-            <div id="servings"></div>
-            <div id="totalTime"></div>
+        <div id="imgs"></div>
+        <br><br><br><br>
+                    <div class="box">
+                        <p id="servings">Servings:</p>
+                        <p id="totalTime">Cooking Time:</p>
+                        <p>Ingredients Needed:</p>
+                        <div id="ingredient"></div>
+                       
+
+                    </div>
+        <br><br><br><br>
+
+                    <div class="box1">
+
+                        <p><h2> Nutritional Summary</h2></p>
+                        <!--<p id="carbohydrate">Carbohydrates:</p>
+                            <p id="protien">Protiens:</p>
+                            <p id="fat">Fats:</p>-->
+                        <p id="summary"></p>
+                    </div>
+
+
+        <div class="box2">
+
+            <p><h2> Method Of Cooking:</h2></p>
+            <div id="steps" class="step"></div>
+
+
         </div>
-
-
-        <div class="box1" id="ingredient" >
-            <p><h2>Ingredients Needed:</h2><br></p>
-        </div>
-
-
-        <div class="box2" id="steps" >
-            <p><h2> Method Of Cooking:</h2><br</p>
-        </div>
-        <!--<div id="summary"></div>-->
     </div>
+
 </head>
 <body>
-
+    
 </body>
 </html>
-<!-- -->
 <script type="text/javascript">
-   var rid ;
+    var rid;
     function oneValue() {
         var url = window.location.search;
         if (url.indexOf("?") != -1) {
             rid = url.substr(url.indexOf("=") + 1);
         }
     }
+
+
     function getInformation() {
         $.ajax({
-            url: "https://api.spoonacular.com/recipes/"+rid+"/information?includeNutrition=false&apiKey=a16063f4fe2b4f5b952d4a348d15892e",          
+            url: "https://api.spoonacular.com/recipes/" + rid + "/information?includeNutrition=false&apiKey=a16063f4fe2b4f5b952d4a348d15892e",
             success: function (res) {
                 document.getElementById("ingredient").innerHTML = "<p>Ingredients:" + res.title + "</p><br>";
-                document.getElementById("imgs").innerHTML = "<img src='" + res.image + "' width='100%' /><br>"
-                document.getElementById("servings").innerHTML = "<p> Servings: " + res.servings + "</p>><br>"
-                document.getElementById("totalTime").innerHTML = "<p> Cook Time: " + res.readyInMinutes + " minutes </p>><br>"
-           
+                document.getElementById("imgs").innerHTML = "<img src='" + res.image + "' width='600px' height='450px' /><br>"
+                document.getElementById("servings").innerHTML = "<p> Servings: " + res.servings + "</p>"
+                document.getElementById("totalTime").innerHTML = "<p> Cook Time: " + res.readyInMinutes + " minutes </p>"
+                //document.getElementById("carbohydrate").innerHTML = "<p>" + res.title + "</p>";
+               // document.getElementById("protien").innerHTML = "<p>" + res.title + "</p>";
+                // document.getElementById("fat").innerHTML = "<p>" + res.title + "</p>";
+                document.getElementById("summary").innerHTML = res.summary;
                 document.getElementById("title").innerHTML = "<p>Recipe:" + res.title + "</p><br>";
-           }
+            }
         });
     }
     function getIngredient() {
         $.ajax({
-            url: "https://api.spoonacular.com/recipes/" + rid + "/ingredientWidget.json&apiKey=a16063f4fe2b4f5b952d4a348d15892e",          
+            url: "https://api.spoonacular.com/recipes/" + rid + "/ingredientWidget.json&apiKey=a16063f4fe2b4f5b952d4a348d15892e",
             success: function (res) {
                 var ing = "11"
                 res.forEach(function (e) {
                     e.ingredient.forEach(function (f) {
                         //ing= ing+f.name+", "
                     })
-                    
+
                 })
                 document.getElementById("ingredient").innerHTML = "<p>Ingredients:" + ing + "</p><br>";
-           }
+            }
         });
     }
-    function getStep() {       
+    function getStep() {
         $.ajax({
             url: "https://api.spoonacular.com/recipes/" + rid + "/analyzedInstructions?apiKey=a16063f4fe2b4f5b952d4a348d15892e",
             success: function (results) {
-                var cookSteps = "<h1>Cooking steps: </br><br>"
-                
+                var cookSteps = "<h1>Cooking steps: </h1><br>"
+
                 results.forEach(function (e) {
-                    var i=0
+                    var i = 0
                     e.steps.forEach(function (s) {
-                        cookSteps = cookSteps + "<h2>Step " + i + ":" + s.step + "</h2><br>"
+                        cookSteps = cookSteps + "<p>Step " + i + ":" + s.step + "</p>"
                         i++
-                    });                  
-                });              
+                    });
+                });
                 document.getElementById("steps").innerHTML = cookSteps;
-           }
+            }
         });
     }
     window.onload = function () {
         oneValue();
         getInformation();
-        
+
         getStep();
-    }      
+    }
 </script>
