@@ -1,0 +1,21 @@
+﻿.scale img {
+    margin: 0;
+    /* Full height */
+    height: auto;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain|cover;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: auto;
+    background-size: contain|cover;
+}
+
+body {
+    background-image: url('../../images/Picture4.jpg');
+}

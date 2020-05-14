@@ -7,102 +7,24 @@
 <head>
     <script src="~/Scripts/jquery-3.3.1.js"></script>
     <script src="~/Scripts/jquery-3.5.0.min.js"></script>
-    <style>
-        body {
-            margin: 0;
-            background: url("https://mockingbot.com/uploads2/images/69/694317/v2_q91ngj.jpg");
-            /* Full height */
-            height: 100%;
-            width: 100%;
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .query {
-            float:right;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 600px;
-            margin: 0 auto;
-        }
-
-        .output {
-            width: 100%;
-            height: 100%;
-            float: left;
-            border-radius: 30px;
-            background-color: white;
-            padding: 10px;
-            border: thin;
-            margin: 0;
-        }
-
-        .input {
-            border: 4px solid #2b56d6;
-            border-radius: 5px;
-            top: 0;
-            right: 0;
-            height: 35px;
-            background: white;
-        }
-
-        .button {
-            background: #2b56d6;
-            color: #ffffff;
-            border-radius: 0 5px 5px 0;
-            width: 60px;
-            top: 0;
-            right: 0;
-            height: 35px;
-        }
-    </style>
-    <div class="query">
-
-        <h2>Enter ingredients for searching</h2>
-        <div>
-            <label for="recipe"><h4>Enter the number of Recipe result(between 1 and 5)</h4></label>
-            <input class="input" type="number" id="quantity" name="quantity" min="1" max="5">
-        </div>
-        <br>
-        <h3>Enter the ingredients separated by Comma:</h3>
-        <input id="search" class="input">
-        <button class="button" id="btn1" onclick="getrecipe(document.getElementById('search').value)">Search</button>
-
-        <h3>Click on images to show more details</h3>
-        <div id="output" class="output">
-
-        </div>
-
-    </div>
-   
-
+    <script src="~/Scripts/Recipe.js"></script>
+    <link href="~/Content/recipe.css" rel="stylesheet" />  
 </head>
 <body>
-    
+    <div class="col-lg-12">
+        <div>
+            <img src="~/images/Picture2.jpg" height="auto" width="100%"/>
+           
+        </div>
+        <br>
+        <h3>Enter the ingredients separated by Comma or Space:</h3>
+        <input id="search" class="input">
+        <button class="button" id="btn1" onclick="getrecipe(document.getElementById('search').value)">Search</button>
+        <h3>Click on images to show more details</h3>
+        <div id="output" class="output">
+        </div>
+    </div>
 </body>
 </html>
-<script>
-    var rid = 0;
-    function getrecipe(q) {
-        $.ajax({
-            url: "https://api.spoonacular.com/recipes/search?query=" + q + "&apiKey=a16063f4fe2b4f5b952d4a348d15892e",
-            success: function (res) {
 
-                var j = document.getElementById("quantity").value;
-                var a = "";
-                for (i = 0; i < j; i++) {
-                    rid = res.results[i].id
-                    a = a + "<div class='imgs'> <p>" + res.results[i].title + "</p><br><a href='Showrecipe?value=" + rid + "'/><img src='" + res.baseUri + res.results[i].image + "' width='400' /><br><br> </div>"
-
-                }
-                document.getElementById("output").innerHTML = a;
-
-            }
-        });
-    }
-</script>
 

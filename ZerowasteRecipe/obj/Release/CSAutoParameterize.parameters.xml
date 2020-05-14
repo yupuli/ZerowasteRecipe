@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters />
+<parameters>
+  <parameter name="ZerowasteDBEntities-Web.config Connection String" description="ZerowasteDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Recipe.csdl|res://*/Models.Recipe.ssdl|res://*/Models.Recipe.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\ZerowasteDB.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Monash\ university\\programs\\5120\\Project\\ZerowasteRecipe\\ZerowasteRecipe\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ZerowasteDBEntities']/@connectionString" />
+  </parameter>
+</parameters>

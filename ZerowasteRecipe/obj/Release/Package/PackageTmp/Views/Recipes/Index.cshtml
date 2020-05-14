@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ZerowasteRecipe.Models.Recipe>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Home/Recipe.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Servings)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ingredient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carbohydrate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Protien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Calories)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Steps)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Servings)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ingredient)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carbohydrate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Protien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Calories)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Steps)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

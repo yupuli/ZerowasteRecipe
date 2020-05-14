@@ -12,25 +12,28 @@ namespace ZerowasteRecipe.Controllers
         {
             return View();
         }
-
+        /**
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
-
+    **/
         public ActionResult Contact()
         {
            
 
             return View();
         }
-        public ActionResult Locations()
-        {
-            ViewBag.Message = "Your can zoom in or out to find collection points";
-            return View();
-        }
+
+        /**
+       public ActionResult Locations()
+       {
+           ViewBag.Message = "Your can zoom in or out to find collection points";
+           return View();
+       }
+   **/
         public ActionResult Recipe()
         {
             ViewBag.Message = "Food Reicpe Search page.";
@@ -41,9 +44,12 @@ namespace ZerowasteRecipe.Controllers
 
             return View();
         }
+        
         public ActionResult Test()
         {
             return View();
         }
+        
     }
 }
+ 
