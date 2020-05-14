@@ -11,12 +11,10 @@ function getInformation() {
     $.ajax({
         url: "https://api.spoonacular.com/recipes/" + rid + "/information?includeNutrition=false&apiKey=a16063f4fe2b4f5b952d4a348d15892e",
         success: function (res) {
-            //document.getElementById("ingredient").innerHTML = "<p>" + res.title + "</p><br>";
-            document.getElementById("imgs").innerHTML = "<img id='images' src='" + res.image + "' /><br>"
-            document.getElementById("servings").innerHTML = "<p>" + res.servings + "</p>"
-            document.getElementById("totalTime").innerHTML = "<p> " + res.readyInMinutes + " minutes </p>"
-            //document.getElementById("summary").innerHTML = res.summary;
-            document.getElementById("title").innerHTML = "<p>Recipe:" + res.title + "</p><br>";
+            
+            document.getElementById("imgs").innerHTML = "<img src='" + res.image + "'alt='Awesome Image' /><br>";
+            document.getElementById("summary").innerHTML = "<p> " + res.summary+"</p >";              
+            document.getElementById("name").innerHTML = "<h3>"+res.title+"</h3>";
         }
     });
 }
@@ -28,10 +26,9 @@ function getIngredient() {
             var ing = ""
             resu.ingredients.forEach(function (e) {
 
-                ing = ing + e.name + " " + e.amount.metric.value + " " + e.amount.metric.unit + ", "
-
+                ing = ing + "<li>"
+                    + e.amount.metric.value + e.amount.metric.unit + " "+ e.name  +"</li>";
             });
-
             document.getElementById("ingredient").innerHTML = "<p> " + ing + "</p><br>";
         }
     });
@@ -40,10 +37,10 @@ function getNutrition() {
     $.ajax({
         url: "https://api.spoonacular.com/recipes/" + rid + "/nutritionWidget.json?apiKey=a16063f4fe2b4f5b952d4a348d15892e",
         success: function (res) {
-            document.getElementById("carbohydrate").innerHTML = "<p>Carbohydrate:" + res.crbs + "</p>";
-            document.getElementById("protien").innerHTML = "<p>Protien:" + res.protein + "</p>";
-            document.getElementById("fat").innerHTML = "<p>Fat:" + res.fat + "</p>";
-            document.getElementById("calories").innerHTML = "<p>Calories:" + res.calories + "</p>";
+            document.getElementById("carbohydrate").innerHTML =  res.crbs ;
+            document.getElementById("protien").innerHTML =  res.protein;
+            document.getElementById("fat").innerHTML = res.fat ;
+            document.getElementById("calories").innerHTML =   res.calories ;
         }
     });
 }
@@ -51,12 +48,12 @@ function getStep() {
     $.ajax({
         url: "https://api.spoonacular.com/recipes/" + rid + "/analyzedInstructions?apiKey=a16063f4fe2b4f5b952d4a348d15892e",
         success: function (results) {
-            var cookSteps = "<h1>Cooking steps: </h1><br>"
+            var cookSteps = ""
 
             results.forEach(function (e) {
                 var i = 1
                 e.steps.forEach(function (s) {
-                    cookSteps = cookSteps + "<p>Step " + i + ":" + s.step + "</p>"
+                    cookSteps = cookSteps + "<ul><li><div class='count - box'><span>" + i + "</span></div><div class='text - box'><p>" + s.step+"</p></div></li></ul>"                    
                     i++
                 });
             });

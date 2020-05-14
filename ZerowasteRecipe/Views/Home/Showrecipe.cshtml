@@ -10,7 +10,7 @@
     <title>Show Recipes</title>
     <!-- viewport meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="~/Scripts/Recipe.js"></script>
     <script src="~/Scripts/ShowRecipes.js"></script>
     <!-- helpers -->
 
@@ -55,7 +55,7 @@
     <header id="header" class="stricky">
         <div class="thm-container clearfix">
             <div class="logo pull-left">
-                <a href="index.html">
+                <a href="http://powerhousea01zerowaste.azurewebsites.net/Home">
                     <img src="~/images/logo.png" />
 
                 </a>
@@ -110,7 +110,7 @@
                     </div>
 
                     <div class="direction-box" id="steps">
-                        
+
 
                     </div>
 
@@ -197,8 +197,8 @@
                         <!--Search box-->
                         <div class="search-box">
                             <form action="#">
-                                <input type="text" placeholder="Enter Search Keywords">
-                                <button type="submit"><i class="icon icon-Search"></i></button>
+                                <input type="text" placeholder="Enter Search Keywords" id="search">
+                                <button type="submit" onclick="getrecipe(document.getElementById('search').value)"><i class="icon icon-Search"></i></button>
                             </form>
                         </div>
                     </div>
