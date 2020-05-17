@@ -191,6 +191,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Collections.css" />
     <Content Include="Content\gradient.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\plugins\animate.min.css" />
@@ -335,6 +336,7 @@
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\powerhousea01zerowaste - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.5.0.intellisense.js" />
+    <Content Include="Scripts\Collections.js" />
     <Content Include="Scripts\home.js" />
     <Content Include="Scripts\jquery-3.5.0.js" />
     <Content Include="Scripts\jquery-3.5.0.min.js" />

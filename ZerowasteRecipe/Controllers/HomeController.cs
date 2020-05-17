@@ -27,13 +27,13 @@ namespace ZerowasteRecipe.Controllers
             return View();
         }
 
-        /**
+        
        public ActionResult Locations()
        {
            ViewBag.Message = "Your can zoom in or out to find collection points";
            return View();
        }
-   **/
+   
         public ActionResult Recipe()
         {
             ViewBag.Message = "Food Reicpe Search page.";
