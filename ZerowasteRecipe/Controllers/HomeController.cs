@@ -28,9 +28,9 @@ namespace ZerowasteRecipe.Controllers
         }
 
         
-       public ActionResult Locations()
+       public ActionResult Collections()
        {
-           ViewBag.Message = "Your can zoom in or out to find collection points";
+           
            return View();
        }
    

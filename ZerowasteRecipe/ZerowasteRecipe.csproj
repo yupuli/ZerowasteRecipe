@@ -354,7 +354,7 @@
     <Content Include="Scripts\passwordprotect.js" />
     <Content Include="Scripts\Recipe.js" />
     <Content Include="Scripts\ShowRecipes.js" />
-    <Content Include="Views\Home\Locations.cshtml" />
+    <Content Include="Views\Home\Collections.cshtml" />
     <Content Include="Scripts\Slides.js" />
     <Content Include="Views\Recipe\single-recipe.html" />
     <Content Include="Web.config" />
