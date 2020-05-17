@@ -336,6 +336,8 @@
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\powerhousea01zerowaste - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.5.0.intellisense.js" />
+    <Content Include="Scripts\CheapEateries.js" />
+    <Content Include="Scripts\CheapGroceries.js" />
     <Content Include="Scripts\Collections.js" />
     <Content Include="Scripts\home.js" />
     <Content Include="Scripts\jquery-3.5.0.js" />
@@ -353,6 +355,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\passwordprotect.js" />
     <Content Include="Scripts\Recipe.js" />
+    <Content Include="Scripts\SecondHandItems.js" />
     <Content Include="Scripts\ShowRecipes.js" />
     <Content Include="Views\Home\Collections.cshtml" />
     <Content Include="Scripts\Slides.js" />
@@ -378,6 +381,7 @@
     <Content Include="Views\Recipes\Details.cshtml" />
     <Content Include="Views\Recipes\Edit.cshtml" />
     <Content Include="Views\Recipes\Index.cshtml" />
+    <Content Include="Views\Home\WhatsAround.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
