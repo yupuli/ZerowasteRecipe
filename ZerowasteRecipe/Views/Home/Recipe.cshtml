@@ -64,7 +64,7 @@
     <header id="header" class="stricky">
         <div class="thm-container clearfix">
             <div class="logo pull-left">
-                <a href="http://powerhousea01zerowaste.azurewebsites.net/Home">
+                <a href="https://powerhousea01zerowaste.azurewebsites.net/Home">
                     <img src="~/images/logo.png" />
                 </a>
             </div>
@@ -74,14 +74,14 @@
                 </div>
                 <div class="nav-footer">
                     <ul class="nav">
-                        <li><a href="http://powerhousea01zerowaste.azurewebsites.net/Home"><i class="flaticon-food"></i>Home</a></li>
+                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home"><i class="flaticon-food"></i>Home</a></li>
                         <li>
-                            <a href="http://powerhousea01zerowaste.azurewebsites.net/Home/Recipe"><i class="flaticon-food-2"></i>recipes</a>
+                            <a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Recipe"><i class="flaticon-food-2"></i>recipes</a>
 
                         </li>
-                        <li><a href="http://powerhousea01zerowaste.azurewebsites.net/Home/Collections"><i class="flaticon-food-4"></i>Collections</a></li>
-                        <li><a href="http://powerhousea01zerowaste.azurewebsites.net/Home/WhatsAround"><i class="flaticon-food-3"></i>Whats Around</a></li>
-                        <li><a href="http://powerhousea01zerowaste.azurewebsites.net/Home/Contact"><i class="flaticon-food-1"></i>contact us</a></li>
+                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Collections"><i class="flaticon-food-4"></i>Collections</a></li>
+                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/WhatsAround"><i class="flaticon-food-3"></i>Whats Around</a></li>
+                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Contact"><i class="flaticon-food-1"></i>Contact us</a></li>
                     </ul>
                 </div>
             </div>
@@ -92,7 +92,9 @@
         <div class="thm-container">
             <div class="box clearfix">
                 <h2 class="pull-left">Search</h2>
-
+                <ul class="breadcumb pull-right">
+                    <li><span>You can search recipes here</span></li>
+                    </ul>
             </div>
         </div>
     </section>
@@ -106,10 +108,11 @@
                             <h2><span>Search</span></h2>
                         </div>
                         <div class="search-box">
-                            <form action="#">
+                            
+                                <p>Please enter your ingredients separated  with a space or comma.</p>
                                 <input type="text" placeholder="Enter Search Keywords" id="search">
-                                <button type="submit" onclick="getrecipe(document.getElementById('search').value)"><i class="icon icon-Search"></i>Search</button>
-                            </form>
+                                <button  onclick="getrecipe(document.getElementById('search').value)"><i class="icon icon-Search"></i>Search</button>
+                            
                         </div>
                     </div>
                 </div>
