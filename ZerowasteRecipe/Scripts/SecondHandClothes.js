@@ -1,10 +1,10 @@
 ﻿
-function initMap1() {
+function initMap3() {
     // Initialize variables
     bounds = new google.maps.LatLngBounds();
     infoWindow = new google.maps.InfoWindow;
     currentInfoWindow = infoWindow;
-    /* TODO: : Add a generic sidebar */
+    /* TODO:  Add a generic sidebar */
     infoPane = document.getElementById('panel');
 
 
@@ -33,21 +33,21 @@ function initMap1() {
             infoWindow.open(map);
             map.setCenter(pos);
 
-            /* TODO: Call the Places Nearby Search */
+            /* Call the Places Nearby Search */
             // Call Places Nearby Search on user's location
-            getNearbyPlaces1(pos);
+            getNearbyPlaces3(pos);
         }, () => {
             // Browser supports geolocation, but user has denied permission
-            handleLocationError1(true, infoWindow);
+            handleLocationError3(true, infoWindow);
         });
     } else {
         // Browser doesn't support geolocation
-        handleLocationError1(false, infoWindow);
+        handleLocationError3(false, infoWindow);
     }
 }
 
 // Handle a geolocation error
-function handleLocationError1(browserHasGeolocation, infoWindow) {
+function handleLocationError3(browserHasGeolocation, infoWindow) {
     // Set default location to Sydney, Australia
     pos = { lat: -33.856, lng: 151.215 };
     map = new google.maps.Map(document.getElementById('map'), {
@@ -63,37 +63,37 @@ function handleLocationError1(browserHasGeolocation, infoWindow) {
     infoWindow.open(map);
     currentInfoWindow = infoWindow;
 
-    /* TODO:  Call the Places Nearby Search */
+    /*  Call the Places Nearby Search */
     // Call Places Nearby Search on the default location
-    getNearbyPlaces1(pos);
+    getNearbyPlaces3(pos);
 }
-/* END TODO:  Geolocate your user */
+/*  Geolocate your user */
 
 /* TODO:  Call the Places Nearby Search */
 // Perform a Places Nearby Search Request
-function getNearbyPlaces1(position) {
+function getNearbyPlaces3(position) {
     let request = {
         location: position,
         rankBy: google.maps.places.RankBy.DISTANCE,
-        keyword: 'second hand furniture'
+        keyword: 'second hand clothes'
     };
 
 
     service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, nearbyCallback1);
+    service.nearbySearch(request, nearbyCallback3);
 }
 
 // Handle the results (up to 20) of the Nearby Search
-function nearbyCallback1(results, status) {
+function nearbyCallback3(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        createMarkers1(results);
+        createMarkers3(results);
     }
 }
 
-/* TODO: , Generate markers for search results */
+/* TODO:  Generate markers for search results */
 
 // Set markers at the location of each place result
-function createMarkers1(places) {
+function createMarkers3(places) {
     places.forEach(place => {
         let marker = new google.maps.Marker({
             position: place.geometry.location,
@@ -101,7 +101,7 @@ function createMarkers1(places) {
             title: place.name
         });
 
-        /* TODO:  Add click listeners to the markers */
+        /* TODO: Add click listeners to the markers */
         // Add click listener to each marker
         google.maps.event.addListener(marker, 'click', () => {
             let request = {
@@ -114,7 +114,7 @@ function createMarkers1(places) {
             * If we fetch the details for all place results as soon as we get
             * the search response, we will hit API rate limits. */
             service.getDetails(request, (placeResult, status) => {
-                showDetails1(placeResult, marker, status)
+                showDetails3(placeResult, marker, status)
             });
         });
 
@@ -128,7 +128,7 @@ function createMarkers1(places) {
 
 /* TODO:  Show place details in an info window */
 // Builds an InfoWindow to display details above the marker
-function showDetails1(placeResult, marker, status) {
+function showDetails3(placeResult, marker, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         let placeInfowindow = new google.maps.InfoWindow();
         placeInfowindow.setContent('<div><strong>' + placeResult.name +
@@ -136,15 +136,15 @@ function showDetails1(placeResult, marker, status) {
         placeInfowindow.open(marker.map, marker);
         currentInfoWindow.close();
         currentInfoWindow = placeInfowindow;
-        showPanel1(placeResult);
+        showPanel3(placeResult);
     } else {
         console.log('showDetails failed: ' + status);
     }
 }
 
-/* TODO:  Load place details in a sidebar */
+/* TODO: Step 4D: Load place details in a sidebar */
 // Displays place details in a sidebar
-function showPanel1(placeResult) {
+function showPanel3(placeResult) {
     // If infoPane is already open, close it
     if (infoPane.classList.contains("open")) {
         infoPane.classList.remove("open");

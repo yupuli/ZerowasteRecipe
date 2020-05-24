@@ -4,7 +4,7 @@ function initMap1() {
     bounds = new google.maps.LatLngBounds();
     infoWindow = new google.maps.InfoWindow;
     currentInfoWindow = infoWindow;
-    /* TODO: Step 4A3: Add a generic sidebar */
+    /* TODO: : Add a generic sidebar */
     infoPane = document.getElementById('panel');
 
 
@@ -33,7 +33,7 @@ function initMap1() {
             infoWindow.open(map);
             map.setCenter(pos);
 
-            /* TODO: Step 3B2, Call the Places Nearby Search */
+            /* TODO: Call the Places Nearby Search */
             // Call Places Nearby Search on user's location
             getNearbyPlaces1(pos);
         }, () => {
@@ -63,19 +63,19 @@ function handleLocationError1(browserHasGeolocation, infoWindow) {
     infoWindow.open(map);
     currentInfoWindow = infoWindow;
 
-    /* TODO: Step 3B3, Call the Places Nearby Search */
+    /* TODO:  Call the Places Nearby Search */
     // Call Places Nearby Search on the default location
     getNearbyPlaces1(pos);
 }
-/* END TODO: Step 2, Geolocate your user */
+/* END TODO:  Geolocate your user */
 
-/* TODO: Step 3B1, Call the Places Nearby Search */
+/* TODO:  Call the Places Nearby Search */
 // Perform a Places Nearby Search Request
 function getNearbyPlaces1(position) {
     let request = {
         location: position,
         rankBy: google.maps.places.RankBy.DISTANCE,
-        keyword: 'second hand markets'
+        keyword: 'second hand furniture'
     };
 
 
@@ -90,7 +90,7 @@ function nearbyCallback1(results, status) {
     }
 }
 
-/* TODO: Step 3C, Generate markers for search results */
+/* TODO: , Generate markers for search results */
 
 // Set markers at the location of each place result
 function createMarkers1(places) {
@@ -101,7 +101,7 @@ function createMarkers1(places) {
             title: place.name
         });
 
-        /* TODO: Step 4B: Add click listeners to the markers */
+        /* TODO:  Add click listeners to the markers */
         // Add click listener to each marker
         google.maps.event.addListener(marker, 'click', () => {
             let request = {
@@ -126,7 +126,7 @@ function createMarkers1(places) {
     map.fitBounds(bounds);
 }
 
-/* TODO: Step 4C: Show place details in an info window */
+/* TODO:  Show place details in an info window */
 // Builds an InfoWindow to display details above the marker
 function showDetails1(placeResult, marker, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -142,7 +142,7 @@ function showDetails1(placeResult, marker, status) {
     }
 }
 
-/* TODO: Step 4D: Load place details in a sidebar */
+/* TODO:  Load place details in a sidebar */
 // Displays place details in a sidebar
 function showPanel1(placeResult) {
     // If infoPane is already open, close it
@@ -155,7 +155,7 @@ function showPanel1(placeResult) {
         infoPane.removeChild(infoPane.lastChild);
     }
 
-    /* TODO: Step 4E: Display a Place Photo with the Place Details */
+    /* TODO:  Display a Place Photo with the Place Details */
     // Add the primary photo, if there is one
     if (placeResult.photos != null) {
         let firstPhoto = placeResult.photos[0];
