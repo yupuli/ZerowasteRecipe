@@ -275,10 +275,12 @@
     <Content Include="Content\recipe.css" />
     <Content Include="Content\responsive.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\WhatsAround.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\404-bg.jpg" />
     <Content Include="images\inner-banner.jpg" />
     <Content Include="images\logo.jpg" />
     <Content Include="images\logo.png" />
@@ -356,7 +358,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\passwordprotect.js" />
     <Content Include="Scripts\Recipe.js" />
     <Content Include="Scripts\SecondHandItems.js" />
     <Content Include="Scripts\ShowRecipes.js" />
@@ -385,6 +386,7 @@
     <Content Include="Views\Recipes\Edit.cshtml" />
     <Content Include="Views\Recipes\Index.cshtml" />
     <Content Include="Views\Home\WhatsAround.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

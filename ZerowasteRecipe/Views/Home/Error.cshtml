@@ -1,57 +1,51 @@
 ﻿
 @{
-    ViewBag.Title = "WhatsAround";
-}
+    ViewBag.Title = "Error";
 
+}
+@{
+    ViewBag.Title = "Contact";
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="~/Scripts/home.js"></script>
     <meta charset="UTF-8">
-    <script src="~/Scripts/CheapGroceries.js"></script>
-    <script src="~/Scripts/SecondHandItems.js"></script>
-    <script src="~/Scripts/CheapEateries.js"></script>
-    <title>WhatsAround</title>
+    <title>Home</title>
     <!-- viewport meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- helpers -->
 
-    <link rel="stylesheet" href="../../Contentplugins/bootstrap/css/bootstrap.min.css">
+    <!-- helpers -->
+    <link rel="stylesheet" href="../../Content/plugins/bootstrap/css/bootstrap.min.css">
     <!-- fontawesome css -->
-    <link rel="stylesheet" href="../../Contentplugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../Content/plugins/font-awesome/css/font-awesome.min.css">
     <!-- strock gap icons -->
-    <link rel="stylesheet" href="../../Contentplugins/Stroke-Gap-Icons-Webfont/style.css">
+    <link rel="stylesheet" href="../../Content/plugins/Stroke-Gap-Icons-Webfont/style.css">
     <!-- revolution slider css -->
-    <link rel="stylesheet" href="../../Contentplugins/revolution/css/settings.css">
-    <link rel="stylesheet" href="../../Contentplugins/revolution/css/layers.css">
-    <link rel="stylesheet" href="../../Contentplugins/revolution/css/navigation.css">
+    <link rel="stylesheet" href="../../Content/plugins/revolution/css/settings.css">
+    <link rel="stylesheet" href="../../Content/plugins/revolution/css/layers.css">
+    <link rel="stylesheet" href="../../Content/plugins/revolution/css/navigation.css">
     <!-- flaticon css -->
     <link rel="stylesheet" href="../../Content/plugins/flaticon/flaticon.css">
     <!-- jQuery ui css -->
-    <link href="../../Contentplugins/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
+    <link href="../../Content/plugins/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
     <!-- owl carousel css -->
-    <link rel="stylesheet" href="../../Contentplugins/owl.carousel-2/assets/owl.carousel.css">
-    <link rel="stylesheet" href="../../Contentplugins/owl.carousel-2/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../../Content/plugins/owl.carousel-2/assets/owl.carousel.css">
+    <link rel="stylesheet" href="../../Content/plugins/owl.carousel-2/assets/owl.theme.default.min.css">
     <!-- animate css -->
-    <link rel="stylesheet" href="../../Contentplugins/animate.min.css">
+    <link rel="stylesheet" href="../../Content/plugins/animate.min.css">
     <!-- fancybox -->
-    <link rel="stylesheet" href="../../Contentplugins/fancyapps-fancyBox/source/jquery.fancybox.css">
+    <link rel="stylesheet" href="../../Content/plugins/fancyapps-fancyBox/source/jquery.fancybox.css">
     <!-- bxslider -->
-    <link rel="stylesheet" href="../../Contentplugins/bx-slider/jquery.bxslider.css">
+    <link rel="stylesheet" href="../../Content/plugins/bx-slider/jquery.bxslider.css">
 
-    <link href="../../Contentplugins/plupload-2.1.8/js/jquery.ui.plupload/css/jquery.ui.plupload.css" rel="stylesheet">
+    <link href="../../Content/plugins/plupload-2.1.8/js/jquery.ui.plupload/css/jquery.ui.plupload.css" rel="stylesheet">
 
     <!-- master stylesheet -->
+    <link href="~/Content/style.css" rel="stylesheet" />
 
-    <link href="../../Content/style.css" rel="stylesheet" />
     <!-- responsive stylesheet -->
-
-    <link href="../../Content/responsive.css" rel="stylesheet" />
-
-
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    <link href="~/Content/WhatsAround.css" rel="stylesheet" />
-
+    <link href="~/Content/responsive.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -65,7 +59,6 @@
             </div>
         </div>
     </section>
-
     <!-- The top navigation bar -->
     <header id="header" class="stricky">
         <div class="thm-container clearfix">
@@ -80,44 +73,43 @@
                 </div>
                 <div class="nav-footer">
                     <ul class="nav">
-                        <li><a href="http://powerhousea01zerowaste.azurewebsites.net/Home"><i class="flaticon-food"></i>Home</a></li>
+                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home"><i class="flaticon-food"></i>Home</a></li>
                         <li>
-                            <a href="http://powerhousea01zerowaste.azurewebsites.net/Home/Recipe"><i class="flaticon-food-2"></i>recipes</a>
-
+                            <a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Recipe"><i class="flaticon-food-2"></i>recipes</a>
                         </li>
-                        <li><a href="http://powerhousea01zerowaste.azurewebsites.net/Home/Collections"><i class="flaticon-food-4"></i>Collections</a></li>
-                        <li><a href="http://powerhousea01zerowaste.azurewebsites.net/Home/WhatsAround"><i class="flaticon-food-3"></i>Whats Around</a></li>
-                        <li><a href="http://powerhousea01zerowaste.azurewebsites.net/Home/Contact"><i class="flaticon-food-1"></i>contact us</a></li>
+                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Collections"><i class="flaticon-food-4"></i>Collections</a></li>
+                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/WhatsAround"><i class="flaticon-food-3"></i>Whats Around</a></li>
+                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Contact"><i class="flaticon-food-1"></i>Contact us</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
     <!-- The page information bar -->
-    <section class="about-info-box">
+    <section class="inner-banner text-center">
         <div class="thm-container">
-            <!-- TODO: Step 4A2: Add a generic sidebar -->
-            <!-- The slide-out panel for showing place details -->
-            <div id="panel"></div>
-            <!-- Map appears here -->
-            <div id="map" style="position:absolute">
-            </div>
-            <!-- The choices of map type -->
-            <div id="topLayer" style="position:absolute">
-                <button id="button" class="w3-button w3-grey w3-border w3-round-large" onclick="initMap1()">Second hand markets</button>
-                <button id="button" class="w3-button w3-grey w3-border w3-round-large" onclick="initMap2()">Cheap eats</button>
-                <button id="button" class="w3-button w3-grey w3-border w3-round-large" onclick="initMap()">Cheap groceries</button>
+            <div class="box clearfix">
+                <h2>404 Error Page</h2>
             </div>
         </div>
     </section>
 
-    <!-- The google map API -->
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwQdfOS6MfyKm3EmMZfo5Noz0j7f37GbY&libraries=places&callback=initMap">
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwQdfOS6MfyKm3EmMZfo5Noz0j7f37GbY&callback=initMap" />
-    </script>
+    <!-- The footer bar -->
+    <section class="error-404 sec-padding text-center">
+        <div class="thm-container">
+            <h2>404</h2>
+            <h3>Oops! That page can’t be found</h3>
+            <h4>Sorry, but the page you are looking for does not existing</h4>
+            <a href="http://powerhousea01zerowaste.azurewebsites.net/Home" class="thm-btn">go to home Page</a>
+        </div>
+    </section>
 
 
+    <section class="bottom-bar text-center">
+        <div class="thm-container clearfix">
+            <p>Copyright &copy; A1-Powerhouse 2020. All rights reserved. <span>Created by DesignArc</span></p>
+        </div>
+    </section>
     <!-- JS -->
     <!-- jQuery js -->
     <script src="../../Content/plugins/jquery/jquery-1.11.3.min.js"></script>
@@ -169,10 +161,7 @@
 
 
     <!-- theme custom js  -->
-
-    <script src="../../Scripts/main.js"></script>
+    <script src="~/Scripts/main.js"></script>
 </body>
-
 </html>
-
 
