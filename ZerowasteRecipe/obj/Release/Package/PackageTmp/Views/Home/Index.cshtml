@@ -37,14 +37,18 @@
 
     <!-- master stylesheet -->
     <link href="~/Content/style.css" rel="stylesheet" />
-    
+
     <!-- responsive stylesheet -->
     <link href="~/Content/responsive.css" rel="stylesheet" />
-   
+
 
 
 </head>
 <body>
+    <!--share to facebook-->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0&appId=567259390877570&autoLogAppEvents=1">
+    </script>
     <!-- The top green bar -->
     <section id="top-bar">
         <div class="thm-container clearfix">
@@ -71,17 +75,23 @@
                     <ul class="nav">
                         <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home"><i class="flaticon-food"></i>Home</a></li>
                         <li>
-                            <a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Recipe"><i class="flaticon-food-2"></i>recipes</a>
+                            <a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Recipe"><i class="flaticon-food-2"></i>Recipes</a>
                         </li>
-                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Collections"><i class="flaticon-food-4"></i>Collections</a></li>
-                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/WhatsAround"><i class="flaticon-food-3"></i>Whats Around</a></li>
+                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Collections"><i class="flaticon-food-4"></i>Rubbish Collections</a></li>
+                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/WhatsAround"><i class="flaticon-food-3"></i>What's Around</a></li>
                         <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Contact"><i class="flaticon-food-1"></i>Contact us</a></li>
+                        <li>&nbsp;</li>
+                        <li></li>
+                        <li>
+                            <div class="fb-share-button" data-href="https://powerhousea01zerowaste.azurewebsites.net" data-layout="button" data-size="large">
+                                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpowerhousea01zerowaste.azurewebsites.net%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
-
     <!-- The slide of index page -->
     <section class="rev_slider_wrapper thm-banner-wrapper">
         <div id="slider1" class="rev_slider" data-version="5.0">
@@ -107,7 +117,7 @@
                          data-transform_in="o:0"
                          data-transform_out="o:0"
                          data-start="1500">
-                        By choosing to buy bulk and recycling your containers, <br>not only can you buy as much or as little as you want, <br>you are also deciding to make a difference.
+                        By choosing to buy bulk items and by recycling your containers, <br>not only can you buy as much or as little as you want, <br> but you are also decide to make a difference.
                     </div>
                 </li>
                 <!-- Slide 2 -->
@@ -209,14 +219,12 @@
                          data-transform_in="o:0"
                          data-transform_out="o:0"
                          data-start="1500">
+
                     </div>
                 </li>
             </ul>
         </div>
     </section>
-
-
-
     <!-- The footer bar -->
     <section class="bottom-bar text-center">
         <div class="thm-container clearfix">
@@ -264,14 +272,8 @@
     <script src="../../Content/plugins/fancyapps-fancyBox/source/jquery.fancybox.pack.js"></script>
     <!-- type script -->
     <script src="../../Content/plugins/typed.js-master/dist/typed.min.js"></script>
-
-
-
-
-
     <script src="../../Content/plugins/plupload-2.1.8/js/plupload.full.min.js"></script>
     <script src="../../Content/plugins/plupload-2.1.8/js/jquery.ui.plupload/jquery.ui.plupload.min.js"></script>
-
 
     <!-- theme custom js  -->
     <script src="~/Scripts/main.js"></script>

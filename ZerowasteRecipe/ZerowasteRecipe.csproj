@@ -302,6 +302,7 @@
     <Content Include="images\slider\5.jpg" />
     <Content Include="images\slider\4.jpg" />
     <Content Include="images\slider\image-1.png" />
+    <Content Include="images\titleImage.png" />
     <Content Include="Models\Recipe.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Recipe.Context.cs</LastGenOutput>

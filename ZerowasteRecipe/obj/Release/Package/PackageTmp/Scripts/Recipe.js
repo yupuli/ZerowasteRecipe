@@ -2,10 +2,7 @@
 //the function of get recipe by search the keyword of ingredients
 function getrecipe(q) {
     var input = q;
-    //if the input is null or empty, show errors
-    if ((input == "") || (input == null)) {
-        alert("This space cannot be empty or space! Please enter again.")
-    } else {
+    //if the input is null or empty, show random recipes
         $.ajax({
         //use spoonacular food recipe API
         url: "https://api.spoonacular.com/recipes/search?query=" + input + "&apiKey=a16063f4fe2b4f5b952d4a348d15892e",
@@ -29,7 +26,7 @@ function getrecipe(q) {
         //if fail to find a recipe, show the Error page
         window.location('Home/Error');
     });
-    }
+    
 
 }
 /**

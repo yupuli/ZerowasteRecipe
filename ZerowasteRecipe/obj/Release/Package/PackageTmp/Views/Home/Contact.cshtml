@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="~/Scripts/home.js"></script>
     <meta charset="UTF-8">
     <title>Home</title>
     <!-- viewport meta -->
@@ -44,17 +43,12 @@
 
 </head>
 <body>
-    <!-- The top green bar -->
-    <section id="top-bar">
-        <div class="thm-container clearfix">
-            <div class="social pull-left">
-                <ul>
-                    <li><a href="#"></a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!-- The top navigation bar -->
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0&appId=567259390877570&autoLogAppEvents=1">
+    </script>
+
+
     <header id="header" class="stricky">
         <div class="thm-container clearfix">
             <div class="logo pull-left">
@@ -70,22 +64,28 @@
                     <ul class="nav">
                         <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home"><i class="flaticon-food"></i>Home</a></li>
                         <li>
-                            <a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Recipe"><i class="flaticon-food-2"></i>recipes</a>
+                            <a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Recipe"><i class="flaticon-food-2"></i>Recipes</a>
                         </li>
-                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Collections"><i class="flaticon-food-4"></i>Collections</a></li>
-                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/WhatsAround"><i class="flaticon-food-3"></i>Whats Around</a></li>
+                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Collections"><i class="flaticon-food-4"></i>Rubbish Collections</a></li>
+                        <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/WhatsAround"><i class="flaticon-food-3"></i>What's Around</a></li>
                         <li><a href="https://powerhousea01zerowaste.azurewebsites.net/Home/Contact"><i class="flaticon-food-1"></i>Contact us</a></li>
+                        <li>
+                            <div class="fb-share-button" data-href="https://powerhousea01zerowaste.azurewebsites.net" data-layout="button" data-size="large">
+                                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpowerhousea01zerowaste.azurewebsites.net%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
             </div>
         </div>
     </header>
-    <!-- The page information bar -->
     <section class="inner-banner">
         <div class="thm-container">
             <div class="box clearfix">
                 <h2 class="pull-left">Contact Us</h2>
                 <ul class="breadcumb pull-right">
+
                     <li><span>You can contact us if you have any questions.</span></li>
                 </ul>
             </div>
@@ -97,18 +97,20 @@
 
     <address>
         A01-Powerhouse
+
     </address>
 
     <address>
         <strong>Support:</strong>   <a href="mailto:yupuli1024@gmail.com">pha01@gmail.com</a><br />
     </address>
 
-    <!-- The footer bar -->
+
     <section class="bottom-bar text-center">
         <div class="thm-container clearfix">
             <p>Copyright &copy; A1-Powerhouse 2020. All rights reserved. <span>Created by DesignArc</span></p>
         </div>
     </section>
+
     <!-- JS -->
     <!-- jQuery js -->
     <script src="../../Content/plugins/jquery/jquery-1.11.3.min.js"></script>
