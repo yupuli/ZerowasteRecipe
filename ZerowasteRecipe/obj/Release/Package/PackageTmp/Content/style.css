@@ -3580,4 +3580,12 @@ ul.special-checkbox li .input-checker input[type='checkbox'] {
     font-size: 2rem;
 }
 
+.tm-icon {
+    display: block;
+    color: green;
+}
+.col-lg-1 {
+    color: green;
+}
+
 
