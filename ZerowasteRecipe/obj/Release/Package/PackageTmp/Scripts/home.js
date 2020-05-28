@@ -23,5 +23,5 @@ function passWord() {
     return "";
 }
 window.onload = function () {
-    passWord();
+    //passWord();
 }     
