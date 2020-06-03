@@ -6,21 +6,19 @@ function getrecipe(q) {
         $.ajax({
         //use spoonacular food recipe API
         url: "https://api.spoonacular.com/recipes/search?query=" + input + "&apiKey=a16063f4fe2b4f5b952d4a348d15892e",
-        success: function (res) {
+            success: function (res) {                         
             var j = 5;
             var a = "1";
             var b = "fixed_title";
             var c = "fixed_images";
-            for (i = 0; i < j; i++) {
+            for (i = 0; i < j; i++) {              
                 rid = res.results[i].id;
                 b = b + a;
                 c = c + a;
                 document.getElementById(b).innerHTML = res.results[i].title;
                 document.getElementById(c).innerHTML = "<img src='" + res.baseUri + res.results[i].image + "' alt=''><div class='img-caption'><div class='box-holder'><ul><li><a href='Showrecipe?value=" + rid + "'><i class='icon icon-Goto'></i></a></li></ul></div></div>";
                 //document.getElementById(c).innerHTML = "<a href='Showrecipe?value="+rid+"'><img id='searchimage' src='" + res.baseUri + res.results[i].image + "' /></a>";               
-            }
-            
-
+            }              
         }
         }).fail(function () {
         //if fail to find a recipe, show the Error page

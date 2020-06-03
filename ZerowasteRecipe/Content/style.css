@@ -102,21 +102,21 @@ li {
   margin-right: auto;
 }
 .thm-btn {
-  border: none;
-  background: #FF8C04;
-  font-size: 16px;
-  line-height: 28px;
-  color: #fff;
-  text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  padding: 7px 25px;
-  display: inline-block;
-  transition: all .5s ease !important;
-  vertical-align: top;
-  position: relative;
-  border-bottom: 3px solid #CC7105;
-  outline: none;
+    border: none;
+    background: #2ECC71;
+    font-size: 16px;
+    line-height: 28px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    padding: 7px 25px;
+    display: inline-block;
+    transition: all .5s ease !important;
+    vertical-align: top;
+    position: relative;
+    border-bottom: 3px solid #2ECC71;
+    outline: none;
 }
 .thm-btn span {
   display: inline-block;
@@ -3539,7 +3539,7 @@ ul.special-checkbox li .input-checker input[type='checkbox'] {
 
 .tm-icon {
     display: block;
-    color: #37A;
+    color: green;
 }
 
 .tm-continue {
@@ -3568,7 +3568,7 @@ ul.special-checkbox li .input-checker input[type='checkbox'] {
 }
 
 .tm-text-primary {
-    color: #37A;
+    color: #2ECC71;
 }
 
 .tm-section-title {
@@ -3582,10 +3582,12 @@ ul.special-checkbox li .input-checker input[type='checkbox'] {
 
 .tm-icon {
     display: block;
-    color: green;
+    color: #2ECC71;
 }
 .col-lg-1 {
-    color: green;
+    color: #2ECC71;
 }
-
+.thm-btn .icon .icon-Goto .contact-form .contact-page {
+    color: #2ECC71;
+}
 
